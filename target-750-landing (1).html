@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Claim your $750 Target Gift Card rewards" />
+<title>Target Rewards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #CC0000;
+    --red-dark: #a80000;
+    --white: #ffffff;
+    --bg: #f9f9f9;
+    --ink: #111111;
+    --muted: #555555;
+    --border: #e8e8e8;
+  }
+
+  html, body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px 60px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* ── LOGO ── */
+  .logo-wrap {
+    margin-bottom: 28px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-bull {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-bull svg {
+    width: 26px;
+    height: 26px;
+  }
+  .logo-text {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--red);
+    letter-spacing: -0.5px;
+  }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--red);
+    background: #fff0f0;
+    border: 1px solid #fcc;
+    border-radius: 999px;
+    padding: 5px 16px;
+    margin-bottom: 22px;
+  }
+
+  /* ── HERO AMOUNT ── */
+  .hero-amount {
+    font-size: 96px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -4px;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .hero-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
+  }
+  .hero-sub {
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 320px;
+  }
+
+  /* ── STEPS ── */
+  .steps-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: left;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .steps {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 32px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--white);
+  }
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--red);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  /* ── CTA BUTTON ── */
+  .cta-btn {
+    display: block;
+    width: 100%;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 17px 20px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: background 0.18s, transform 0.12s;
+  }
+  .cta-btn:hover {
+    background: var(--red-dark);
+    transform: translateY(-1px);
+  }
+  .cta-note {
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  /* ── FAQ ── */
+  .faq-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: left;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .faq-card {
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+  }
+  .faq-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- LOGO -->
+  <div class="logo-wrap">
+    <div class="logo">
+      <div class="logo-bull">
+        <!-- Target bullseye -->
+        <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="13" cy="13" r="11" stroke="white" stroke-width="2.2"/>
+          <circle cx="13" cy="13" r="6" stroke="white" stroke-width="2.2"/>
+          <circle cx="13" cy="13" r="2.2" fill="white"/>
+        </svg>
+      </div>
+      <span class="logo-text">Target</span>
+    </div>
+  </div>
+
+  <!-- BADGE -->
+  <div class="badge">Exclusive Offer</div>
+
+  <!-- HERO -->
+  <div class="hero-amount">$750</div>
+  <div class="hero-label">Member Reward</div>
+  <p class="hero-sub">Unlock amazing savings and exclusive rewards just for being a Target Member</p>
+
+  <!-- STEPS -->
+  <div class="steps-title">How to Claim</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">Click the Button Below</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">Enter Your Basic Info</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">Complete 5-8 deals</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">Claim up to $750 Target Gift Card</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <a href="https://linkthem.net/aff_c?offer_id=250&aff_id=182692" class="cta-btn">
+    Claim Your $750 Reward
+  </a>
+  <p class="cta-note">Claim now to secure your exclusive reward</p>
+
+  <!-- FAQ -->
+  <div class="faq-title">How do I qualify and claim my reward?</div>
+  <div class="faq-card">
+    <p>To qualify for your Target gift card, you'll need to complete 5-8 deals to unlock the full $750 reward. Be sure to finish each deal from start to completion. Once all deals are successfully completed, you'll be eligible to claim your reward.</p>
+  </div>
+
+</div>
+</body>
+</html>
